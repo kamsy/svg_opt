@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import SvgIcon from "./components/SvgIcon";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const svg_names = [
+    "AlarmClock",
+    "PaintBrush",
+    "ProfileUser",
+    "PowerOffSvg",
+    "LoanStatusSvg",
+    "MasterCard",
+    "LoanHistory",
+    "MicroChip",
+    "LinkedInSvg"
+];
+const App = () => {
+    return (
+        <div className="App">
+            {svg_names.map((name, index) => (
+                <SvgIcon {...{ name, size: index * 20, color: "blue" }} />
+            ))}
+        </div>
+    );
+};
 
 export default App;
